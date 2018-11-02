@@ -1,0 +1,65 @@
+https://developer.mozilla.org/bm/docs/Learn/Getting_started_with_the_web/JavaScript_basics
+
+left shit and right shit operator: 5>>4; 5<<4
+Bitwise AND(&) operator: 2 & 4
+Bitwise OR(|) operator : 2 | 4
+
+
+radical
+base
+
+(25)base 10 - you can have 0-9
+
+compliments can only be two - 1's and 2's
+
+so How can you findout the negative number for 25....
+
+R's compliment = [R]^nbase 10 - [N]base10
+
+(R-1)s compliment = [[R-1]^nbase10] - [N]base10
+
+N = Number; R = radix, n = no of digits
+
+
+negation of a number -- ~(n) = -(n+1)
+
+how to find a binary value for 25.890625
+
+
+
+--Permissions
+--hardlinks
+--inode numbers
+--compliments
+--negation
+--binary floats
+
+
++"55" gives you 55. unary plus operator, it basically converts strings into number
+
+2) take backup
+3) create new logs every min
+
+--classification of ips (A(0) - 1-127, B(10) - 128-191, C(110) - 192-223, D(1110) - 224- 239, E - 240 - 255)
+--cron jobs
+--ppts
+--html
+--commands in linux
+--alternatives to mern stack
+---URL,URN,URI
+---port numbers(27017-mongo, cpanel - 2083, 404 page not found, status ok 200, email - 2096, https-80, ftp-20)
+-pushd popd
+- compliments 
+- permissions
+- fragments
+- server system and client system
+- network
+- nat and pragim - diff. manually change ur ip.
+- cpanel
+- display diff languages in my html page
+- linux fundamentals
+- ipv4, ipv6 octal diff
+
+
+
+

@@ -1,0 +1,18 @@
+Read Linux - One final read of PDF
+Read HTML  - One final read of W3schools
+Read JavaScript  - youtube(traversy), w3schools
+Negative Numbers - YES DONE
+
+HTML assignments - DONE
+Reverse of a string in HTML - Use bdo
+
+Number System
+Bitwise Operators
+
+1)Version control mechanisms and type of mechanisms
+2) Semantic version
+3)semver.org
+4)Bit bucket, gitlab, github
+5)authors of programming lang
+6)blogs (Medium, twitter)
+

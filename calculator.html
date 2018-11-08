@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta charset = "UTF-8">
+        <meta name="description" content="A Calculator Program">
+        <meta name="keywords" content="Html, CSS and JavaScript">
+        <meta name="author" content="Nishnomadcoder">
+        <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+        <style>
+            
+            *{
+               margin: 0;
+               padding: 0; 
+            }
+
+            .button{
+                width: 50;
+                height: 50;
+                font-size: 25;
+                color: blue;
+                margin: 2;
+                cursor: pointer;
+                background: #607d8b;
+                border: none;
+                color: white;
+            }
+            .textview{
+                width: 218;
+                margin: 5;
+                font-size: 25;
+                padding: 5;
+                border: none;
+                color : #607d8b;
+            }
+
+            h1{
+                text-align: center;
+                margin-top: 10%;
+                color: white;
+            }
+            .main{
+                position:absolute;
+                top: 50%;
+                right: 50%;
+                transform: translateX(50%) translateY(-50%);
+            }
+            .bg{
+                background: linear-gradient(to right,#e91e63,#0000ff);
+                height: 100%
+            }
+
+        </style>
+        <script>
+            function insert(num){
+                document.form.textview.value = document.form.textview.value + num;
+            }
+
+            function equal(){         
+                    document.form.textview.value = eval(document.form.textview.value);           
+            }
+
+            function reset(){
+                document.form.textview.value = "";
+            }
+
+            function back(){
+                var exp = document.form.textview.value;
+                document.form.textview.value = exp.substring(0,exp.length-1);
+            }
+
+            function sqrt(){
+                var exp = document.form.textview.value;
+                var sqrt = Math.sqrt(exp);
+                document.form.textview.value = sqrt;
+            }
+            
+        </script>
+    </head>
+    <body class="bg">
+        
+                <h1> I'm a Calculator ...I can be helpful &#x1F603; </h1>
+                <br>
+                <div class="main">
+                    <form name="form">
+                        <input class="textview" name="textview">
+                    </form>
+                    <br>
+                    <table>
+                            <tbody>
+                                <tr>
+                                    <td><input type = "button" class = "button" value = "AC" onclick="reset()"></td>
+                                    <td><input type = "button" class = "button" value = "&Sqrt;" onclick = "sqrt()"></td>
+                                    <td><input type = "button" class="button" value="/" onclick="insert('/')"></td>
+                                    <td><input type = "button" class = "button" value = "&leftarrow;" onclick="back()"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type = "button" class="button" value="8" onclick="insert(8)"></td>
+                                    <td><input type = "button" class="button" value="7" onclick="insert(7)"></td>
+                                    <td><input type = "button" class="button" value="9" onclick="insert(9)"></td>
+                                    <td><input type = "button" class="button" value="x" onclick="insert('*')"></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td><input type = "button" class="button" value="4" onclick="insert(4)"></td>
+                                    <td><input type = "button" class="button" value="5" onclick="insert(5)"></td>
+                                    <td><input type = "button" class="button" value="6" onclick="insert(6)"></td>
+                                    <td><input type = "button" class="button" value="+" onclick="insert('+')"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type = "button" class="button" value="1" onclick="insert(1)"></td>
+                                    <td><input type = "button" class="button" value="2" onclick="insert(2)"></td>
+                                    <td><input type = "button" class="button" value="3" onclick="insert(3)"></td>
+                                    <td><input type = "button" class="button" value="-" onclick="insert('-')"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type = "button" style="width: 106" class="button" value="0" onclick="insert(0)"></td>
+                                    <td><input type = "button" class="button" value="." onclick="insert('.')"></td>
+                                    <td><input type = "button" class="button" value="=" onclick="equal()"></td>
+                                </tr>
+                            </tbody>
+                    </table>
+                 </div>   
+    </body>
+</html>

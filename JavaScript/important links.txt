@@ -1,0 +1,2 @@
+https://developer.mozilla.org/bm/docs/Learn/Getting_started_with_the_web/JavaScript_basics
+https://dmitripavlutin.com/7-tips-to-handle-undefined-in-javascript/

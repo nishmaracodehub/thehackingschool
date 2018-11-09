@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 HI This is Bob
+=======
+Hi This is Alice
+>>>>>>> Alice making change

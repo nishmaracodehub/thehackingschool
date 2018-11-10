@@ -240,5 +240,131 @@
   22
   1
 */
+// var num = 2;
+// for(var i = 1; i <=5; i ++){
+//   var count = "";
+//   if(i<4){
+//     for(var j = 5; j>=i;j--){
+//       count = count + i;
+//     }
+//   }
+//   else{
+//     for(var j = 5; j>=i;j--){
+//       count = count + num;
+//     }
+//     num = num - 1;
+//   }
+//   console.log(count);
+// }
 
 
+/*5432*
+  543*1
+  54*21
+  5*321
+  *4321
+*/
+
+// for(var i = 1; i <=5; i++){
+//   var count= "";
+//   for(var j=5;j>=1;j--){
+//     if(j!=i){
+//       count = count + j;
+//     }
+//     else{
+//       count = count + "*";
+//     }
+//   }
+//   console.log(count);
+// }
+
+/*1
+  21
+  321
+  4321
+  54321
+*/
+
+// for(var i = 1; i<=5;i++){
+//   var count = "";
+//   for(var j = 1;j<=i;j++){
+//     count = count + j;
+//   }
+//   count = count.split("").reverse().join("");
+//   console.log(count);
+// }
+
+/*5
+  54
+  543
+  5432
+  54321
+*/
+
+// for(var i = 5; i >= 1; i--){
+//   var count = "";
+//   for(var j = 5; j>= i; j--){
+//     count = count + j;
+//   }
+//   console.log(count);
+// }
+
+/*1
+  22
+  333
+  4444
+  55555
+*/
+
+// for(var i= 1;i<=5;i++){
+//   var count = "";
+//   for(var j = 1; j<=i; j++){
+//     count = count + i;
+//   }
+//   console.log(count);
+// }
+
+/*5
+  44
+  333
+  2222
+  11111
+*/
+
+// for(var i = 5; i>=1;i--){
+//   var count = "";
+//   for(var j = 5; j>=i;j--){
+//     count = count + i;
+//   }
+//   console.log(count);
+// }
+
+/*55555
+  4444
+  333
+  22
+  1
+*/
+
+for(var i = 5; i >=1; i--){
+  var count = "";
+  for(var j = 1; j<=i;j++){
+    count = count + i;
+  }
+  console.log(count);
+}
+
+/*11111
+  2222
+  333
+  44
+  5
+*/
+
+for(var i = 1; i<=5;i++){
+  var count = "";
+  for(var j = 5; j>=i;j--){
+    count = count + i;
+  }
+  console.log(count);
+}

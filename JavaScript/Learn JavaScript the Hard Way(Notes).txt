@@ -1,0 +1,165 @@
+Parsing Engine
+Lexical Environment - where something is written in the code physcially is important, that it determines certain things as far as how javascript engine will decide and interpret where things live and where things will sit inside the memory and how they will connect to each other.
+Execution content
+
+
+
+Global Object(window), Global variable (this) both are equal at the global level.
+
+parsing engine is taking my code and taking decisions.
+
+Program Execution Phases in Javascript:
+
+Phase 1 : wrapper around my code - execution context - memory space -- This is Creation Phase ( allocation of memory space to variables and functions)
+then execution starts in phase 2 - Code Execution - This is exection phase (assignments, printing and other )
+
+HOISITNG:
+variables setup (and set equal to undefined) and functions setup
+
+b();
+console.log(a);
+
+var a = "Hello World";
+function b(){
+	console.log("I'm b");
+}
+
+o/p:
+
+I'm b. funtions will be invoked doesnt matter where its position is in the program (above or below of invoking call)
+undefined. but its not the case for variables, in the first phase memory is created for variables and they are set equal to undefined before they are declared.
+		Since a is being printed here before it is declared, undefined special value will be printed to console.
+
+Javascript and undefined
+
+undefned is a special value and the special keyword that javascrit has in it internally that means the variables hasn't been set
+
+This is why we see what we see and why javascript behaves does what it does
+
+Single threaded : One command being executed at a time
+
+Javascript behaves in a single threaded manner for us as a programmer but not may be underhood of the browser
+
+Synchronous Execution: One at a time not two or three at a time
+
+code is executed one line at a time.
+
+Function Invoction and Execution Stack:
+
+Invocation - means running a function, in javascript we use () to invoke a funtion
+
+each function will create a new execution context on the top of the parent execution context in the form of stack , this Execution stack is formed. (last in First Out)
+
+FUNCTIONS , CONTEXT and VARIABLE ENVIRONMENT
+
+variable environment : is where the variables created and how they are related to each other in memory.
+
+Every execution context has its own variable environment
+
+Example prog:
+
+function b(){
+	var myvar;
+	console.log(myvar);//b execution context which has new memory for myvar
+}
+function a(){
+	var myvar = 2;
+	console.log(myvar);//a execution context which has new memory for myvar
+	b();
+}
+
+var myvar = 1;
+console.log(myvar);//global
+a();
+console.log(myvar);//global
+
+o/p:
+1
+2
+undefined
+1
+
+THE SCOPE CHAIN:
+
+Every Execution context will have a reference to its outer environment which is GLobal Environment. 
+
+Program:
+function b(){ // this function b() is physically sitting where var myvar = 1  is sitting , in a javascript file but not in any function. so its physcal or lexial environment reference is to global.
+	
+	console.log(myvar);//b execution context where myvar is empty since its not declared(no memory)
+}
+function a(){
+	var myvar = 2;
+	b();
+}
+
+var myvar = 1; //global
+a();
+
+o/p:
+1 //not undefined
+
+--- so when you ask for a variable while running a line of code inside any particular execution content if it can't find that variable in that context then it will look into the outer reference for the value of that variable and prints it. (here it is javascript engine)..
+--- the outer references depends on where that particular execution context sits lexically. 
+--- Here b() sits not inside a but the global level, so its outer lexical environment is global and so as a()'s...
+--- so when we asked for myvar in b() it went and looked into its outer reference (outer lexical environment) and prints its value.
+
+* When you invoke a function the javascript engines creates an outer reference for that execution context and it looks where the code is physically sitting and then it created appropriate outer reference
+based on where the function is physcially written in the javascript file. This entire act of searching, this chain of references to outer environments is called SCOPE CHAIN.
+
+Senario 2:
+
+function a(){
+	
+	function b(){ // this function b() is now physically sitting inside function a() so its outer reference is not global anywhere, it would be a().
+	
+	console.log(myvar);
+}
+	var myvar = 2;
+	b();
+}
+
+var myvar = 1; //global
+a();
+b(); // b() is not sitting physically global level instead its in function a() so this invoking will create an error. cuz you cannot invoke a function which is sitting inside another function form outside
+
+o/p: error b is not defined.
+
+Senario 3:
+function a(){
+	
+	function b(){ // this function b() is now physically sitting inside function a() so its outer reference is not global anywhere, it would be a().
+	
+		console.log(myvar);
+	}
+	var myvar = 2;
+	b();
+}
+
+var myvar = 1; //global
+a();
+
+o/p : 2. // since b() is sitting in a() its outer reference will be pointing to a() so myvar is not defined in its execution context then it will look into its outer reference so it will print 1.
+
+Senario 4:
+
+function a(){
+	
+	function b(){ // this function b() is now physically sitting inside function a() so its outer reference is not global anywhere, it would be a().
+	
+		console.log(myvar);
+	}
+	//var myvar = 2; now if I remove this line what happens. 
+	b();
+}
+
+var myvar = 1; //global
+a();
+
+o/p : 1 // myvar in b() will search for its value in its outer reference a(), but its not defined in a() as well so outer reference of a() is global context so it will search for the value here which is 1.
+
+
+
+
+
+

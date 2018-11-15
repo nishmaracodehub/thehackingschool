@@ -159,6 +159,115 @@ a();
 o/p : 1 // myvar in b() will search for its value in its outer reference a(), but its not defined in a() as well so outer reference of a() is global context so it will search for the value here which is 1.
 
 
+SCOPE:
+
+Where a variable is available in your code...
+
+Let - keyword to declare a variable (ES6 or ES 2015): ALlows javascript engine to use block scoping
+
+if you try to use a variable which is declared using let before its declared statement, you will get an error cuz of let keyword. you are not allowed to use before its declared statement.
+
+Asynchronous: MOre than One at a time
+
+Javascript engine first finishes the execution stack synchronously and once the stack is empty it will look into event stack and see if there is anything in queue to execute(like click events)
+
+Program:
+
+function waitThreeSeconds(){
+var ms = 3000 + new Date().getTime();
+while(new Date < ms){}
+console.log("finished function");
+
+function clickHandler(){
+console.log("click event!");
+}
+
+//listen for the click event
+
+document.addEventListener('click', clickHandler);
+
+waitThreeSeconds();
+console.log('finished execution');
+
+o/p: finished function
+finished execution
+
+Now when you click on the document window of browser you will get o/p as below
+finished function
+finished execution
+click event!
+
+DYNAMIC TYPING: (JavaScript)
+
+You don't tell the javascript engine what type of data a variable holds, it figures it out while your code is running...
+
+Variable can hold different types of values cuz it's all figured out during execution.
+
+STATIC TYPING:
+
+you tell the compiler what type of data you are actually going to work on. (java, c#)
+
+PRIMITIVE TYPES:
+
+there are SIX Primitive types - 
+
+a type of data that represents a single value which is not a object ( cuz it is a collection of name value pairs)
+
+1)UNDEFINED - undefined represents lack of existence - the code never set the value(you shouldn't set a variable to this)
+2)NULL - null represents lack of existence - when the variable has no value ( you can assign this to a variable when you a variable to be set to nothing)
+3)BOOLEAN - True or False
+4)NUMBER - Floating point number (there's always some decimals). Unlike other programming languages there's only one number type...and it can make math weird
+5)STRING - a sequence of characters. 
+6)Symbol - new and used in ES6.
+
+OPERATORS: are special types of functions(pre written code) which will return a value when parameters are passes to them.
++, -, *, /, >, < ...
+
+OPERATOR PRECEDENCE AND ASSOCIATIVITY 
+
+OPERATOR PRECEDENCE: mean which operator gets the call first. Functions are called in order of precedence
+ASSOCIATIVITY: what order the operators gets called when they have same precedence - LEFT TO RIGHT
+
+LOOK into precedence and associativity table in developer.mozilla.org
+
+COERSION - Converting a value from one type to another - This happens quite often in JavaScript because its dynamically typed.
+Coersed is nothing but conversion; var a = 1 + '2' => 12 -- here number 1 is coersed to string 1 and concatinated to 2 so the output. this happens only for '+' concatenation operator
+
+COMPARISON OPERATORS:
+console.log(1<2<3) -- > True . console.log(3<2<1) -- True. 3<2 i False. javascript converts False to number value which is 0 so 0<1 becomes true...
+==, ====
+0 == False => True but if we use 0===False => False. cuz === is strictly equal
+
+Check the link developer.mozilla.org/en-US/docs/Web/JavaScript/Equity_comparisions_and_sameness
+
+EXiSTENCE AND BOOLEAN
+
+something doesnt exist will given false when we use Boolean(undefined), Boolean(null), Booleans("")
+
+var a;
+
+if(a){
+ console.log("there is something...");
+}else{
+console.log("there is nothing...");
+}
+
+o/p : there is nothing... ==> anything in if will be converted to boolean value so Boolean(a)-- here a is undefined; so Boolean(undefined) returns false.
+if a is null or empty still the result will be false and second statement will be printed
+
+DEFAULT VALUES:
+
+
+
+
+
+
+
+
+
+	
+
+
 
 
 

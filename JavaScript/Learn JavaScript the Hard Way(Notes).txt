@@ -257,6 +257,103 @@ if a is null or empty still the result will be false and second statement will b
 
 DEFAULT VALUES:
 
+Default values can be set using '||' operator. 
+
+Example: 
+function greet(name){
+ name = name || 'print something';
+console.log('Hello ' + name);
+}
+
+greet('nishanth');
+greet(); //no parameters here.
+greet(0); //this will also pass nothing
+
+0/p:
+Hello nishanth
+Hello print something
+Hello print something
+
+FRAMEWORK or Library :
+
+a grouping of javascript code performing a task that is intended to be reusable...
+
+OBJECTS AND FUNCTIONS:
+
+var person = new Object();
+
+person["firstname"] = "Nishanth";
+person["Lastname"] = "Maraboina";
+
+console.log(person); //prints object
+console.log(person[firstname]); //prints Nishanth
+
+you can also use . operator like below
+
+console.log(person.firstname); //prints Nishanth ..// after dot anything will be string so you dnt have to give ""
+
+var person.address = new Object();
+
+person.address.city = "Hyderabad";
+person.address.state = "Telangana";
+person.address.country = "India";
+
+console.log(person.address.city); // Hyderabad
+console.log(person.address.state); //Telangana
+console.log(person[address][country]); //India
+
+dot representation is the recommended and best one to use for objects...
+
+OBJECTS AND OBJECT LITERALS:
+Objecct literal is '{}'
+
+so you can create object as var person = {};
+
+var person = {
+firstname: Nishanth,
+lastname: Maraboina,
+address: {
+city: Hyderabad,
+State: Telangana,
+Country: India
+};
+
+console.log(person);
+
+o/p: object { firstname: "Nishanth", lastname: "Maraboina", address: object}
+	address : object 
+		city: Hyderabad
+		state: Telangana
+		country: India
+
+
+Scenario 2:
+
+var nishanth = {
+firstname: Nishanth,
+lastname: Maraboina,
+address: {
+city: Hyderabad,
+State: Telangana,
+Country: India
+};
+
+function greet(name){
+console.log("Hello " + name.firstname);
+}
+
+greet(nishanth);
+
+o/p: Hello Nishanth
+
+you can also do greet ({firstname: "Nishanth", lastname: "Maraboina"});
+
+you can also add new object to an existing object like below:
+
+nishanth.address2 = {
+streetname: "Telephone Colony",
+area: "kothapet"
+};
 
 
 

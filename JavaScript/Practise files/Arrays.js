@@ -47,8 +47,34 @@ var newPrime = [];
 // }
 // console.log(newPrime);
 
-//Method 3: (this is funny one)
+//Method 3:
 
-prime1.splice(0,1);
-prime1.splice(2,1);
-console.log(prime1);
+// prime1.splice(0,1);
+// prime1.splice(2,1);
+// console.log(prime1);
+
+//write a program to find a max number in an array and also second max number
+
+//Method 1:
+// var maxNum = function (arr){
+//     arr = Array.from(new Set(arr));
+//     arr.sort((a,b)=> a - b);
+//     return "First Maximum Number " + arr[arr.length-1] + " " + "Second Maximum Number " + arr[arr.length-2];
+// }
+//  console.log(maxNum([1,12,6,9,10,4,12,2]));
+
+// //Method 2:
+// var maxNum = function (arr){
+//     arr = Array.from(new Set(arr));
+//     for(let j = 0;j < arr.length; j ++){
+//         for(let i = 0; i < arr.length; i ++){
+//             if((arr[i] - arr[i+1]) >= 0){
+//                 arr[i+1] = [arr[i], arr[i] = arr[i+1]][0];
+//             }else{
+//                 continue;
+//             }
+//         }
+//     }
+//     return "First Maximum Number " + arr[arr.length-1] + " " + "Second Maximum Number " + arr[arr.length-2];
+// }
+// console.log(maxNum([1,12,6,9,10,4,12,2]));

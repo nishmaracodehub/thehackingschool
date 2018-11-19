@@ -1,2 +1,2 @@
 # TheHackingSchool
-Bootcamp Documents and Coding Works
+Coding and Bootcamp Documents

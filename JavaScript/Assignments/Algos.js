@@ -67,34 +67,34 @@
 // console.log(findGcd([20,10,50,30]));
 
 //Write a program given an array of ‘N’ numbers, find LCM of it.
-function findlcm(arr){
-    var values1 = [];
-    for(let i = 0; i < arr.length; i++){
-        for(let j = 2; j < arr[i];j++){
-            if(arr[i] % j == 0){
-                values1.push(j);
-            }
-        }
-    }
-    return checkNumDuplicates(values1);
+// function findlcm(arr){
+//     var values1 = [];
+//     for(let i = 0; i < arr.length; i++){
+//         for(let j = 2; j < arr[i];j++){
+//             if(arr[i] % j == 0){
+//                 values1.push(j);
+//             }
+//         }
+//     }
+//     return checkNumDuplicates(values1);
     
-            function checkNumDuplicates(arr1){     //function to find highest number which is repeating 3 times in an array
-                var lcmNum = [];
-                for(let k =0;k<arr1.length;k++){
-                    var cnt = 0;
-                    for(let l=0;l< arr1.length;l++){
-                        if(arr1[l]==arr1[k]){
-                            cnt+=1;
-                        }
-                    }
-                    if(cnt >= 3){
-                        lcmNum.push(arr1[k]);
-                    }
-                }
-                return Math.min.apply("",lcmNum);
-            }
-}    
-console.log(findlcm([20,10,50,30]));
+//             function checkNumDuplicates(arr1){     //function to find highest number which is repeating 3 times in an array
+//                 var lcmNum = [];
+//                 for(let k =0;k<arr1.length;k++){
+//                     var cnt = 0;
+//                     for(let l=0;l< arr1.length;l++){
+//                         if(arr1[l]==arr1[k]){
+//                             cnt+=1;
+//                         }
+//                     }
+//                     if(cnt >= 3){
+//                         lcmNum.push(arr1[k]);
+//                     }
+//                 }
+//                 return Math.min.apply("",lcmNum);
+//             }
+// }    
+// console.log(findlcm([20,10,50,30]));
 
 //Remove Duplicates from an array using JavaScript
 
@@ -131,3 +131,23 @@ console.log(findlcm([20,10,50,30]));
 // }
 
 // checkArray([4,8,2,1,9])
+
+//Print the absolute difference between the sums of the matrix's two diagonals as a single integer.
+
+var arr = [[1,2,3],[6.10,1],[5,8,7]];
+var sum1 = 0, sum2 = 0;
+for(var i = 0; i < arr.length;i++){
+    for(var j = i; j <= i;j++){
+        sum1 = sum1 + arr[i][j];
+    }
+}
+for(var k = 0;k < arr.length;k++){
+    for(var l = 2-k ;l>=2-k;l--){
+        sum2 = sum2 + arr[k][j];
+    }
+}
+
+console.log(abs(sum1-sum2));
+
+
+//02, 11, 20

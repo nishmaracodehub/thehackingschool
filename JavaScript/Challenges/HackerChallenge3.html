@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Interest Calculator</title>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <script src="https://static.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+    <script src="https://static.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+
+    <style>
+
+        html, body, #container {
+            width: 85%;
+            height: 85%;
+            margin: 0;
+            padding: 0;
+            }
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color:firebrick;
+        }
+        #container{
+            float: right;
+        }
+        h1{
+            margin-left: 80px;
+        }
+
+        label{
+            display: inline-block;
+            width: 100px;
+        }
+        fieldset{
+            width: 40%;
+            margin-left: 80px;
+            margin-top: 50px;
+        }
+        img{
+            float: right;
+        }
+        button{
+            background-color: #4917a7;
+            color: #ffffff;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>EMI Calculator</h1>
+    <fieldset name="Interest Calculator">
+            <img src="http://www.jshomes.in/images/emi.jpg" width="300" height="300" alt="EMI images">
+            <label for="principal">Principle:
+                    <input type="text" name="principal" id="principal" placeholder="Principal Amount">
+                </label><br><br>
+                <label for= "time">Time:
+                    <input type="text" name="time" id="time" placeholder="Time Period(years)">
+                </label><br><br>
+                <label for= "rateofinterest">ROI:
+                        <input type="text" name="rateofinterest" id="rateofinterest" placeholder="Rate">
+                </label><br><br>
+                <button type="button" value="Calculate" style="margin-left:40px" onclick="interestCal()">Calculate</button>
+                <br><br>           
+                <label for= "interest">Interest:</label><br>
+                <textarea rows="3" cols="10" name="interest" id="interest"></textarea>
+    </fieldset>
+    <br><br><br>
+    <div id="container"></div>
+    <script>
+            function interestCal()
+            {
+                var p, t, r;
+                p = document.getElementById("principal").value;
+                t = document.getElementById("time").value;
+                r = (document.getElementById("rateofinterest").value)/100;
+
+                var i = Math.round(p * (1 + r * t));
+                console.log(i);
+                document.getElementById("interest").innerHTML = i;
+
+                anychart.onDocumentReady(function() {
+
+                    // set the data
+                    var data = [
+                        {x: "Interest", value: i},
+                        {x: "Balance Principal Amount", value: i-p},
+                    ];
+                
+                    // create the chart
+                    var chart = anychart.pie();
+                
+                    // set the chart title
+                    chart.title("PIE Chart");
+                
+                    // add the data
+                    chart.data(data);
+                
+                    // display the chart in the container
+                    chart.container('container');
+                    chart.draw();
+                });
+            }
+    </script>
+</body>
+</html>

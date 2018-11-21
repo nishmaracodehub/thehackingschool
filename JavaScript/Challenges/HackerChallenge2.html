@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Table of Numbers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    
     <style>
         body,td{
             text-align: center;
@@ -32,50 +32,51 @@
     <script>
         function start(){
             var body = document.getElementsByTagName("body")[0]; 
-            var table = document.createElement('table');
+            var table = document.createElement('table'); //creating a table element here followed by tbody
             var tbody = document.createElement('tbody');
-            var cnt = 1;
-            for(var i =1; i<=10;i++){
-                var trow = document.createElement('tr');    
-                    for(var j=1;j<=10;j++){
+            var cnt = 1;   //Using the count variable for couting and assigning value to cells when looping through row and column arrays
+            for(var i =1; i<=10;i++){   //looping through row array
+                var trow = document.createElement('tr');    //creating a row element here
+                    for(var j=1;j<=10;j++){                 //looping through column array and creating td element below
                         var tcol = document.createElement('td');
-                        tcol.innerHTML = cnt;
-                        tcol.addEventListener('click',function mulValues(){
-                            var arr = [];
-                            for(var k = 1;k <= 100;k++){
+                        tcol.innerHTML = cnt;               //assigning the counter value to the celltext of columns
+                        tcol.addEventListener('click',function mulValues(){ //adding a click event feature to each cell in table
+                            var arr = [];                   //when a cell is clicked the mutiples of the value in that particular cell are retrieved and push them into an array
+                            for(var k = 1;k <= 100;k++){    //loop to findout the mutiples of the selected cell value
                                 if(k % this.innerHTML == 0){
-                                    arr.push(k);
+                                    arr.push(k);            //pushing the multiples into an array
                                 }
                             }
-                            var x= document.getElementsByTagName('td');
-                            for(var k = 0; k < 100; k ++){
-                                for(var n = 0;n<arr.length;n++){
-                                    if(x[k].innerHTML == arr[n])
+                            var x= document.getElementsByTagName('td'); //Now for comparing these multiple values to the cell values
+                            for(var k = 0; k < 100; k ++){      //Used each td element cell value by looping through for compaing with
+                                for(var n = 0;n<arr.length;n++){    //the array we created above so that we will have final values
+                                    if(x[k].innerHTML == arr[n])    //after the comparison of two values 
                                     {
-                                        x[k].innerHTML = "*";
+                                        x[k].innerHTML = "*";       //to push the '*' to the cell value of that particular col cell.
                                     }
                                 }
                             } 
                         });
-                        cnt += 1;
-                        trow.appendChild(tcol);                    
+                        cnt += 1;               //icreasing the counter varialble value for assigning values till 100 in a 10x10 table
+                        trow.appendChild(tcol);           ///appending columns to the rows         
                     }
-                tbody.appendChild(trow);
+                tbody.appendChild(trow);                //appending rows to the body
             }
-            table.appendChild(tbody);
+            table.appendChild(tbody);                   //appending table body to the table
             body.appendChild(table);
             table.setAttribute("border",2);
             table.setAttribute("align",'center');
         }
     </script>
 </head>
-<body onload="start()">
+<body onload="start()"> <!--table wil start getting created when the body element loads-->
     <h1>Star Table of Number Multiples</h1>
-    <Button type="submit" id="submit" value="Reset" onclick="resetFun()">Reset</Button>
+    <!--Button for implementing reset functionality of the table but not the browser-->
+    <Button type="submit" id="submit" value="Reset" onclick="resetFun()">Reset</Button>  
     <br><br>
     <script>
             function resetFun(){
-                window.location.reload()
+                window.location.reload()        //reloads the window page.
                 }
     </script>
 </body>

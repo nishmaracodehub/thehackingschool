@@ -20,12 +20,21 @@
                         var tcol = document.createElement('td');
                         tcol.innerHTML = cnt;
                         tcol.addEventListener('click',function mulValues(){
+                            var arr = [];
+                            for(var k = 1;k <= 100;k++){
+                                if(k % this.innerHTML == 0){
+                                    arr.push(k);
+                                }
+                            }
                             var x= document.getElementsByTagName('td');
-                            for(var k = 0;k < 100;k++){
-                                    if((k+1) % this.innerHTML == 0){
+                            for(var k = 0; k < 100; k ++){
+                                for(var n = 0;n<arr.length;n++){
+                                    if(x[k].innerHTML == arr[n])
+                                    {
                                         x[k].innerHTML = "*";
                                     }
                                 }
+                            } 
                         });
                         cnt += 1;
                         trow.appendChild(tcol);                    

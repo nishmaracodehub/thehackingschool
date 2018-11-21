@@ -6,12 +6,33 @@
     <title>Table of Numbers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <style>
+        body,td{
+            text-align: center;
+            font-size: 16px;
+        }
+        tr,td{
+            padding: 22px;
+        }
+        table{
+            border-collapse: collapse;
+            font-weight: bold;
+            background-color: #5c4e42;
+            color: #ffffff;
+            width: 650px;
+            height: 600px;
+        }
+        button{
+            width: 20%;
+            padding: 10px;
+            background-color: rgb(4, 109, 31);
+            color: #ffffff;
+        }
+    </style>
     <script>
         function start(){
-            var body = document.getElementsByTagName("body")[0];
-            body.style.textAlign = 'center';
+            var body = document.getElementsByTagName("body")[0]; 
             var table = document.createElement('table');
-            table.style.borderCollapse = 'collapse';
             var tbody = document.createElement('tbody');
             var cnt = 1;
             for(var i =1; i<=10;i++){
@@ -39,26 +60,19 @@
                         cnt += 1;
                         trow.appendChild(tcol);                    
                     }
-            tbody.appendChild(trow);
+                tbody.appendChild(trow);
             }
             table.appendChild(tbody);
             body.appendChild(table);
-            
-            tcol.style.textAlign = 'center';
-            table.style.fontWeight = 'bold';
             table.setAttribute("border",2);
-            table.setAttribute("width",800);
-            table.setAttribute("height",800);
             table.setAttribute("align",'center');
-            table.style.backgroundColor = 'black';
-            table.style.color = 'white';
         }
-
     </script>
 </head>
 <body onload="start()">
     <h1>Star Table of Number Multiples</h1>
-    <Button style="width:15%;padding:10px" type="submit" id="submit" value="Reset" onclick="resetFun()">Reset</Button><br><br>
+    <Button type="submit" id="submit" value="Reset" onclick="resetFun()">Reset</Button>
+    <br><br>
     <script>
             function resetFun(){
                 window.location.reload()

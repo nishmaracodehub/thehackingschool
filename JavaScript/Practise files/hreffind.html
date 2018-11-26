@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        function popUp(){
+            alert("you clicke me");
+        }
+
+        function getRandomImage(imgAr) {
+        var num = Math.floor( Math.random() * imgAr.length );
+        var img = imgAr[ num ];
+        return img;
+}
+
+        function imageChange(){
+            var arr_images = ["1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg"];
+            document.getElementById('imgChange').src = getRandomImage(arr_images);
+        }
+    </script>
+</head>
+<body onload = 'imageChange()'>
+    <h1> Finding href tag and call alert popup instead of opening a link</h1>
+    <a href="#"  onclick="popUp()">click me for popup</a><br>
+    <a href="#" onclick="popUp()">click me for popup</a><br>
+    <a href="#" onclick="popUp()">click me for popup</a><br>
+    <br><br>
+    <div>
+            <a href= "#"><img src='1.jpeg' id="imgChange" alt=""></a>
+    </div>
+    
+    
+</body>
+</html>

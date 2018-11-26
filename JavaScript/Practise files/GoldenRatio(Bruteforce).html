@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+   
+</head>
+<body id="body">
+        <script>
+                    var div1 = document.createElement("div");
+
+                    div1.id = "div1";
+                    div1.style.backgroundColor = "red";
+                    div1.style.width="900px";
+                    div1.style.height="555px";
+
+                    var t = document.getElementById("body");
+                    t.appendChild(div1);
+
+
+                    var div3 = document.createElement("div");
+
+                    div3.id = "div3";
+                    div3.style.backgroundColor = "green";
+                    div3.style.width="345px";
+                    div3.style.height="555px";
+
+
+                    var t = document.getElementById("div1");
+                    t.appendChild(div3);
+
+
+                    var div4 = document.createElement("div");
+
+                    div4.id = "div4";
+                    div4.style.backgroundColor = "black";
+                    div4.style.width="345px";
+                    div4.style.height="210px";
+
+                    var t = document.getElementById("div3");
+                    t.appendChild(div4);
+
+                    var div5 = document.createElement("div");
+
+                    div5.id = "div5";
+                    div5.style.backgroundColor = "blue";
+                    div5.style.width="135px";
+                    div5.style.height="210px";
+
+                    var t = document.getElementById("div4");
+                    t.appendChild(div5);
+
+                    var div6 = document.createElement("div");
+
+                    div6.id = "div6";
+                    div6.style.backgroundColor = "yellow";
+                    div6.style.width="135px";
+                    div6.style.height="75px";
+
+                    var t = document.getElementById("div5");
+                    t.appendChild(div6);
+
+
+
+                    var div7 = document.createElement("div");
+
+                    div7.id = "div7";
+                    div7.style.backgroundColor = "brown";
+                    div7.style.width="60px";
+                    div7.style.height="75px";
+
+                    var t = document.getElementById("div6");
+                    t.appendChild(div7);
+        
+            </script>
+</body>
+</html>

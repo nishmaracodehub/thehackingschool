@@ -1,0 +1,22 @@
+{
+  "name": "My Chrome Extension",
+  "version": "69.0.420.666",
+  "manifest_version": 2,
+  "description": "This is Nishanth's own extension!",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "hreffind.html",
+    "default_title": "Nishanth"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ],
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["jquery-3.3.1.min.js","myjs.js"]
+  }]
+}

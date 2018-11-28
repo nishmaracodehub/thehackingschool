@@ -1,0 +1,176 @@
+
+https://www.toptal.com/designers/htmlarrows/symbols/<br/> -XHTML ; <br> - HTML5 - it is used for a line break
+<hr> - horizontal line
+<!DOCTYPE HTML> - this is for HTML5
+	- Declaration tag tells the browser which type of HTML the document is written in
+
+Google will access the meta tags for knowing more about the page you are requesting....
+<meta name="name of the description" content="description">
+<meta name="keywords" content="give a short key names">
+
+Inline vs Block elements:Inline : (span, img, a)
+	- Donot start on a separate line
+	- Take only necessary width
+Block : (div, h1-h6, p, form)
+	- start on a new line
+	- Take full width
+
+----------------------------------------HTML BASIC TAGS-------------------------------------------
+<!-- Headings -->
+<h1> -- <h6>
+
+<!--Paragraph-->
+
+<!--Lists-->
+un ordered list:
+<ul>
+	<li>..</li>
+</ul>
+ordered List:
+<ol>
+	<li>..</li>
+</ol>
+
+<!-- Table-->
+<table>
+	<thead>
+	 <th>...</th>
+	</thead>
+	<tbody>
+ 		...
+	</tbody>
+</table>
+
+<!--forms-->( we can only get the structure or presentation of form but the functionality will come with logic implementaton with javascript or php)
+
+<form action="file.js or file.php" method="POST or GET">
+	<div> <!-- to get every label in a separate line since div is block level)
+	<label> First Name</label>
+	<input type="text" name="firstName(go with camelcase)" placeholder="Enter First Name">
+	</div>
+	<br>
+	<div>
+	<label> Last Name</label>
+	<input type="text" name="lastName" placeholder="Enter Last Name">
+	</div>
+	<div>
+	<label> Message</label>
+	<textarea name = "Message" placeholder="Enter Message"></textarea>
+	</div>
+	<br>
+	<div>
+	<label> Gender</label>
+	<select>
+		<option value="Male">Male</option>
+		<option value="Female">Female</option>
+	</select>
+	</div>
+	<br>
+	<div>
+	<label> Age:</label>
+	<input type="number" name="age" value="30"(predefinedvalue)>
+	</div>
+	<br>
+	<div>
+	<label> Birthday:</label>
+	<input type="date" name="birthday">
+	</div>
+	<br>
+	<input type="submit" name="submit" value="submit">
+</form>
+
+<!--Buttons-->
+<button>Click Me!</button>
+
+<!--Image-->
+link around the image
+<a href="name of the image">
+<img src="name of the image.jpeg" alt="name of the file" width="200" (height will be set to auto)>
+</a>
+	
+<!--Quotations-->
+<blockquote cite="website">....text...</blockquote>
+<abbr> hover over you will see the abbrevation===> <p> the  <abbr title="The World Wide Web">WWW</abbr> is awesome</p>
+<cite> gives the italic tag ===> <p><cite>HTML crash course</cite>By Nishanth. </p>	
+
+-------------------------------------END OF HTML BASIC TAGS----------------------------------------
+
+--------------------------------------HTML5 SEMANTIC TAGS------------------------------------------
+
+semantic tags clearly describe their meaning to both browser and the developer
+
+
+Diagram: ______________________
+	|		       |
+	|-------<header>-------|
+	|______________________|
+	|
+	|---------<nav>--------|
+	|______________________|
+	|           |	       |
+	| <section> |	       |
+	|___________|	       |
+	|	    | <aside>  |
+	| <article> |	       |
+	|___________|__________|
+	|		       |
+	|	<footer>       |	
+	|______________________|
+
+<header></header>
+<footer></footer> (copyrght privacy policy things)
+<aside></aside> (side bar content)
+<main></main>
+<article></article>(bog posts)
+<nav></nav> (Nav bars)
+<section></section> (copy texts)
+<details></details>
+
+using these tags:
+
+<body>
+	<header id="main-footer"> My HTML WEB PAGE </header>
+	<section> 
+		<article class ="post">
+			<h3>My blog post1 </h3>
+			<small> Posted by Nishanth on May 8th </small>
+			<p> ....text.....</p>
+			<a href="post1.html">Read more</a>
+		</article>
+		<br>
+		<article class ="post">
+			<h3>My blog post2 </h3>
+			<small> Posted by Nishanth on May 8th </small>
+			<p> ....text.....</p>
+			<a href="post2.html">Read more</a>
+		</article>
+		<br>
+		<article class ="post">
+			<h3>My blog post3 </h3>
+			<small> Posted by Nishanth on May 8th </small>
+			<p> ....text.....</p>
+			<a href="post3.html">Read more</a>
+		</article>
+	</section>
+	
+	<aside>
+		<h3> These are Categories </h3> <!-- you can float them to side using css-->
+		<nav> <!-- When you have some kindof navigation you use nav tags-->
+		  <ul>
+			<li><a href="#(do this so that when you click its not gonna go anywhere">Category1</a></li>
+			<li><a href="#(do this so that when you click its not gonna go anywhere">Category2</a></li>
+			<li><a href="#(do this so that when you click its not gonna go anywhere">Category3</a></li>
+		  </ul>
+		</nav>			
+	</aside>
+	<footer id="main-footer">
+		<p>Copyright &copy; 2018, my website </p>
+	</footer>
+
+you might use multiple headers and multiple footers for that give each one of them IDs.
+
+
+Attributes to remember:
+-- Provide info about the tag element and is written inside the start tag; key/value (attrib/val)
+target = "_blank" ( used in <a>, a new tab will be opened when the link is clicked)
+

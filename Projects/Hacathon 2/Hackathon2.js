@@ -34,6 +34,7 @@ function findString(s){
                     return findString(newstr); // recursive function call
                 }
             }else{
+                //if the passed string is not found in the array then remove the last char of string and call the function (recursive method)
                 if(i == array.length-1 && j == array[i].length-1){
                     var newstr = s.substring(0,s.length-1);
                     return findString(newstr);

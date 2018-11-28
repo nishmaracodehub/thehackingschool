@@ -35,11 +35,12 @@ function findString(s){
                 }
             }else{
                 if(i == array.length-1 && j == array[i].length-1){
-                    return "Passed String is Not Found in Given Array";
+                    var newstr = s.substring(0,s.length-1);
+                    return findString(newstr);
                 }
             }
         }
     }
 }
 
-console.log(findString('BACB'));
+console.log(findString('ABCC'));

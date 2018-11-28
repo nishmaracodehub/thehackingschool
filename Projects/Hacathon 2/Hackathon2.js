@@ -33,9 +33,13 @@ function findString(s){
                 else{
                     return findString(newstr); // recursive function call
                 }
+            }else{
+                if(i == array.length-1 && j == array[i].length-1){
+                    return "Passed String is Not Found in Given Array";
+                }
             }
         }
     }
 }
 
-console.log(findString('CBA'));
+console.log(findString('BACB'));

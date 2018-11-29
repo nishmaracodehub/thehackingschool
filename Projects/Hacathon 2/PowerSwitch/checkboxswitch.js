@@ -6,7 +6,9 @@ function switchPower(){
         if(checkbox2.checked){
             checkbox1.checked = true;
             checkbox2.checked = false;
-        }else{
+        }
+        else
+        {
             checkbox1.checked = false;
             checkbox2.checked = true;
         }

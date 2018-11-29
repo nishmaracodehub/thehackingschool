@@ -8,15 +8,14 @@
     <link rel="stylesheet" type="text/css" media="screen" href="boxswitchstyles.css" />
 </head>
 <body>
+    <h1 class="blink"> POWER SWITCH!!</h1>
     <div class="container">
-            <div class = 'box'>
-                    <p id = "on">ON</p>
-                    <p id = "off">OFF</p>
-            </div>
+        <p id = "on" onclick="switchPower()">ON</p>
+        <p id = "off" onclick="switchPower()">OFF</p>
             
-            <div id="switch">
-                    <button type="button" id="switch" value="switch" onclick="switchPower()">SWITCH</button>
-            </div> 
+            <!-- <div id="switch">
+                    <button type="button" id="switch" value="switch" >SWITCH</button>
+            </div>  -->
     </div>       
 
     <script src="boxswitch.js"></script>

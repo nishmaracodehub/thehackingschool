@@ -1,17 +1,27 @@
+h1{
+    text-align: center;
+    font-size: 40px;
+    color: crimson;
+}
+
+.blink {
+    animation: blink infinite 0.4s 0s; 
+  } 
+  @keyframes blink {
+    from {opacity: 0;}
+    to {opacity: 1;} 
+  }
+
 .container{
     font-family: Arial, sans-serif;
     background:#40464b;
-    margin: auto;
     font-size: 25px;
-    width: 60%;
-    height: 600px;
-}
-
-.box{
-    margin-left:200px;
-    margin-right:200px;
-    margin-top:150px;
-    margin-bottom: 100px;
+    width: 50%;
+    height: 350px;
+    margin-left:25%;
+    margin-right:25%;
+    margin-top:6%;
+    margin-bottom: 20%;
 }
 
 p{
@@ -26,17 +36,18 @@ p{
 #on{
     background-color: green;
     position: absolute;
-    top: 2in;
+    top: 22%;
+    left: 33%
 }
 
 #off{
     background-color: red;
     position: absolute;
-    right: 6in;
-    top: 2in;
+    right: 34%;
+    top: 22%;
 }
 
-#switch{
+/* #switch{
   
     text-align: center;
     width: 140px;
@@ -54,4 +65,4 @@ p{
 #switch :hover{
 background-color: #6797be;
 color: antiquewhite;
-}
+} */

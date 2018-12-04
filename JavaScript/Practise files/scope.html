@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (var i = 0; i < 5; i++) {
+        let p = document.createElement("p");
+        let btn = document.createElement("button");
+        btn.appendChild(document.createTextNode("Button " + i));
+        btn.addEventListener("click", function() {
+          {
+            console.log(i);
+          }
+        });
+        p.appendChild(btn);
+        document.body.appendChild(p);
+      }
+
+      for (let i = 0; i < 5; i++) {
+        let p1 = document.createElement("p");
+        let btn1 = document.createElement("button");
+        btn1.appendChild(document.createTextNode("Button " + i));
+        btn1.addEventListener("click", function() {
+          {
+            console.log(i);
+          }
+        });
+        p1.style.cssFloat = "left";
+        p1.appendChild(btn1);
+        document.body.appendChild(p1);
+      }
+    </script>
+  </body>
+</html>

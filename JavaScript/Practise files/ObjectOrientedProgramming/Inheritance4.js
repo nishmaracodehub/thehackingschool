@@ -19,6 +19,7 @@ class Employee extends Organization{
     constructor(orgname,empid){
         super(orgname);
         this.empid = empid;
+        Object.assign(this, new Person())
     }
 
     empDetails(){
@@ -33,7 +34,7 @@ class City{
 }
 
 var emp = new Employee("Google","1806");
-Object.assign(emp, new Person("Nishanth","30"));
-Object.assign(emp, new City("Hyderabad"));
+Object.assign(emp, new Person("Nishanth","30"),new City("Hyderabad"));
+//Object.assign(emp, );
 emp.empDetails();
 

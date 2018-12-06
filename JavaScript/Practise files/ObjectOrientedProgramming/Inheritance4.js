@@ -22,11 +22,18 @@ class Employee extends Organization{
     }
 
     empDetails(){
-        console.log(this.orgname + " 's employee " + this.name + " 's ID is " + this.empid + " and his Age is " + this.age);
+        console.log(this.orgname + " 's employee " + this.name + " 's ID is " + this.empid + " and his Age is " + this.age + " who's living in " + this.city);
+    }
+}
+
+class City{
+    constructor(city){
+        this.city=city;
     }
 }
 
 var emp = new Employee("Google","1806");
 Object.assign(emp, new Person("Nishanth","30"));
+Object.assign(emp, new City("Hyderabad"));
 emp.empDetails();
 

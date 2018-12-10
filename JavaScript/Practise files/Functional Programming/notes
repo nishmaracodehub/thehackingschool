@@ -1,0 +1,124 @@
+Functional Programming:
+
+First Class Functions:
+
+MIchael Fogus in his book "Functional Programming" described the term "First Class", means that something is just a value. First class functions can go anywhere just as a value with few to no restrictions.
+
+A Number can be stored in a variable so in a function :
+
+var a = 10;
+var fun = function(){ console.log("hello")};
+fun();
+
+o/p: hello
+
+A number can be stored in an array and the function can also be stored in an array :
+
+var arr = [1, function(){console.log("hello from array");}];
+arr[1]();
+
+o/p: hello from array
+
+A number can be stored in a object and the function can also be stored in a object :
+
+var obj = { 
+	   num : 20;
+	   func : function (){console.log("hello from object");}};
+obj.func();
+
+o/p: hello from object
+
+A number can be given as a part of an expression so can a function :
+
+console.log(6 + (function(){return 6;})());
+
+o/p: 12
+
+A number can be passed to a function and a function can be passed as a function to a function :
+
+var addTwo = function (num, fn){
+	     console.log(num + fn());
+
+addTwo(12, function(){return 12;});
+
+o/p: 24
+
+A number can be returned from a function and so can a function can be returned from a function :
+
+var returnNum = function() {return 24;}
+var returnFun = function(){
+		return funcion(){console.log("Hello for the last time");};
+};
+
+var newFun = returnFun();
+newFun();
+
+o/p:
+
+Hello for the last time
+
+Immediate Invoked Function Expression (IIFE):
+This is a function expression which is invoked immediately, infact the function is invoked during the time it got defined.
+
+So When to USE IIFE:
+
+Your code needs to do some setup tasks when the page loads like setting up some event listeners, you only need to do this once so there is no reason to create a reusable function
+and by doing it with IIFE you prevent the creation of global variables cuz it provides the local scope to all of your code that needs to be invoked immediately.
+
+Scenario:
+
+var prod = function(){
+	return 6 * 6;
+};
+
+prod(); 
+
+o/p: 36
+
+(var prod = function(){
+	return 6 * 6;
+};)
+
+prod;
+
+0/p: undefuned ( prod is not known outside of IFFE, everything is local to it)
+
+function(){
+	return 6 * 6;
+}();
+
+0/p: syntax error unexpected token ( ( v8 once it sees function keyword it will look for its name after it instead of ( , so gives error)
+
+in javascript you can keep anything inside the braces...v8 gives you that flexibility
+
+(function(){
+	return 6 * 6;
+})();
+
+0/p: 36
+
+Anonymous Function: No name associated with it; function () { xxxxx } but it has to be passed as a value, thats only when we use this kindof functions.
+
+Pass by Value and Pass by Reference:
+
+with Primitve values the actual value is passed but with objects the value that is passed is a reference to that underlying object 
+
+Scenario:
+Pass by Value..............
+var num = 10, num1 = num;
+num++;
+console.log(num);
+console.log(num1);
+
+o/p: 11
+     10
+Pass by Reference..........
+var obj1 = { num : 10, name : "steven"}, obj2 = obj1;
+obj1.num++;
+console.log(obj1);
+console.log(obj2);
+
+o/p: {num : 11, name : "steven"}
+     {num : 11, name : "steven"}
+
+So basically if you make a change to the object by passing it around anywhere in your code, that variables that having the same reference as this object will get changed too...

@@ -45,7 +45,7 @@ var cntNames = names.reduce(function (allNames, name) {
         allNames[name] = 1;
     }
     return allNames;
-}, {});
+}, []);
 
 console.log(cntNames);
 
@@ -77,3 +77,17 @@ function groupBy(objArray, prop) {
 var groupedPeople = groupBy(people, 'age');
 
 console.log(groupedPeople);
+
+//Removing Duplicates in an Array
+
+let arr = ['a', 'b', 'a', 'b', 'c', 'e', 'd', 'e', 'c', 'd', 'd', 'd', 'd'];
+
+let result = arr.sort().reduce(function (acc, cur) {
+    let length = acc.length;
+    if (length === 0 || acc[length - 1] != cur) {
+        acc.push(cur);
+    }
+    return acc;
+}, []);
+
+console.log(result);

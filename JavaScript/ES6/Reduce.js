@@ -33,3 +33,18 @@ var flattened = [
 ].reduce((acc, cur) => acc.concat(cur), []);
 
 console.log(flattened);
+
+//Counting instance of values in an object
+
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+var cntNames = names.reduce(function (allNames, name) {
+    if (name in allNames) {
+        allNames[name]++;
+    } else {
+        allNames[name] = 1;
+    }
+    return allNames;
+}, {});
+
+console.log(cntNames);

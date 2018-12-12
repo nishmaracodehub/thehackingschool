@@ -48,3 +48,32 @@ var cntNames = names.reduce(function (allNames, name) {
 }, {});
 
 console.log(cntNames);
+
+//Grouping Objects by a propery
+
+var people = [{
+        name: 'Alice',
+        age: 21
+    },
+    {
+        name: 'Max',
+        age: 20
+    },
+    {
+        name: 'Jane',
+        age: 20
+    }
+];
+
+function groupBy(objArray, prop) {
+    return objArray.reduce(function (acc, obj) {
+        let key = obj[prop];
+        if (!acc[key]) acc[key] = [];
+        acc[key].push(obj);
+        return acc;
+    }, {});
+}
+
+var groupedPeople = groupBy(people, 'age');
+
+console.log(groupedPeople);
